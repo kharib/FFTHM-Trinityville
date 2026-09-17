@@ -1,379 +1,304 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP (Adapted for New Birth Ministries - Jamaica / FFTHM Branch)
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fingers From The Heart Ministries - Branch</title>
-  <meta name="description" content="Welcome to Fingers From The Heart Ministries Branch. Join us for worship and fellowship.">
-  
-  <style>
-    /* ==========================================================================
-       CSS VARIABLES & BRAND COLORS
-       ========================================================================== */
-    :root {
-      /* Primary Brand Palette (Aligned with FFTHM) */
-      --brand-primary: #1A2B4C;      /* Deep Navy */
-      --brand-accent: #C59B27;       /* Royal Gold Accent */
-      --brand-accent-hover: #A37F1E;
-      --text-dark: #222222;
-      --text-muted: #555555;
-      --bg-light: #F8F9FA;
-      --bg-white: #FFFFFF;
-      --footer-bg: #0F172A;
-      
-      /* Layout & Spacing */
-      --max-width: 1200px;
-      --header-height: 80px;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
+	<head>
+		<title>New Birth Ministries - Jamaica | FFTHM Branch</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Welcome to New Birth Ministries - Jamaica (Fingers From The Heart Ministries Branch). Join us for worship and fellowship." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<style>
+			/* ==========================================================================
+			   THEME OVERRIDES: Light Color Palette & Logo Palette Integration
+			   ========================================================================== */
+			:root {
+				--brand-deep-purple: #2E1A47;
+				--brand-royal-purple: #4A2069;
+				--brand-gold: #C59B27;
+				--brand-gold-light: #E0BA51;
+				--brand-sky-blue: #00A2E8;
+				--text-dark: #2D2B32;
+				--text-muted: #5E5B66;
+				--bg-light: #FAF9FC;
+				--bg-white: #FFFFFF;
+				--bg-accent-soft: #F3EDFA;
+				--font-heading: 'Cinzel', Georgia, serif;
+				--font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+			}
 
-    /* ==========================================================================
-       RESET & BASE STYLES
-       ========================================================================== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+			body, input, select, textarea {
+				font-family: var(--font-body);
+				color: var(--text-dark);
+				background-color: var(--bg-light) !important;
+			}
 
-    body {
-      font-family: var(--font-main);
-      color: var(--text-dark);
-      background-color: var(--bg-light);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+			h1, h2, h3, h4, h5, h6 {
+				font-family: var(--font-heading);
+				color: var(--brand-deep-purple);
+				letter-spacing: 0.5px;
+			}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+			/* Sidebar / Navigation Styling Override */
+			#sidebar {
+				background: var(--brand-deep-purple) !important;
+			}
+			#sidebar nav ul li a {
+				color: #E2D9EE !important;
+				font-family: var(--font-body);
+				font-weight: 500;
+			}
+			#sidebar nav ul li a.active, 
+			#sidebar nav ul li a:hover {
+				color: var(--brand-gold-light) !important;
+			}
 
-    /* ==========================================================================
-       HEADER & NAVIGATION SHELL
-       ========================================================================== */
-    .site-header {
-      background-color: var(--bg-white);
-      height: var(--header-height);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
+			/* Section Styles Override for Light Theme */
+			.wrapper.style1 {
+				background-color: var(--bg-white) !important;
+				color: var(--text-dark) !important;
+			}
+			.wrapper.style2 {
+				background-color: var(--bg-accent-soft) !important;
+				color: var(--text-dark) !important;
+			}
+			.wrapper.style3 {
+				background-color: var(--bg-light) !important;
+				color: var(--text-dark) !important;
+			}
+			.wrapper.style1-alt {
+				background-color: var(--brand-deep-purple) !important;
+				color: #E2D9EE !important;
+			}
 
-    .header-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1.5rem;
-    }
+			/* Buttons Styling */
+			.button, button, input[type="submit"] {
+				background-color: var(--brand-gold) !important;
+				color: #FFFFFF !important;
+				border-radius: 6px !important;
+				font-family: var(--font-body) !important;
+				font-weight: 600 !important;
+				box-shadow: none !important;
+				transition: all 0.25s ease !important;
+			}
+			.button:hover, button:hover, input[type="submit"]:hover {
+				background-color: #A8811A !important;
+				color: #FFFFFF !important;
+			}
+			.button.outline {
+				background-color: transparent !important;
+				border: 2px solid var(--brand-deep-purple) !important;
+				color: var(--brand-deep-purple) !important;
+			}
+			.button.outline:hover {
+				background-color: var(--brand-deep-purple) !important;
+				color: #FFFFFF !important;
+			}
 
-    /* Brand / Logo Area */
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--brand-primary);
-    }
+			/* Feature Box Styling */
+			.features section {
+				border-color: rgba(74, 32, 105, 0.15) !important;
+				background: var(--bg-white);
+				padding: 2rem;
+				border-radius: 8px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+			}
+			.features .icon {
+				color: var(--brand-gold) !important;
+			}
 
-    .brand-logo span.branch-tag {
-      font-size: 0.8rem;
-      background-color: var(--brand-accent);
-      color: #fff;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+			/* Logo Badge Header */
+			.logo-badge {
+				display: inline-block;
+				background-color: var(--brand-gold);
+				color: #FFF;
+				padding: 0.2rem 0.6rem;
+				border-radius: 4px;
+				font-size: 0.75rem;
+				font-family: var(--font-body);
+				vertical-align: middle;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				margin-bottom: 1rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-    /* Navigation Links */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">About & Leadership</a></li>
+							<li><a href="#two">Ministries & Service</a></li>
+							<li><a href="#three">Worship & Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
 
-    .nav-link {
-      font-weight: 500;
-      color: var(--brand-primary);
-      font-size: 0.95rem;
-    }
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-    .nav-link:hover {
-      color: var(--brand-accent);
-    }
+				<!-- Intro Section -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<span class="logo-badge">FFTHM Branch</span>
+							<h1>New Birth Ministries</h1>
+							<p style="font-size: 1.25rem; color: var(--brand-royal-purple); font-weight: 500;">Jamaica</p>
+							<p>A place of faith, fellowship, and transformation. Join us in worship as we walk in purpose together, proclaiming the undiluted Word of God.</p>
+							<ul class="actions">
+								<li><a href="#three" class="button scrolly">Plan A Visit</a></li>
+								<li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener" class="button outline">Visit Parent Church HQ</a></li>
+							</ul>
+						</div>
+					</section>
 
-    /* Action Buttons */
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+				<!-- One Section (About & Leadership Highlights - Spotlight Layout) -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="https://fingersfromtheheart.com/" target="_blank" class="image"><img src="images/pic01.jpg" alt="FFTHM Ministries" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Our Branch Vision</h2>
+									<p>A local expression of Fingers From The Heart Ministries, dedicated to proclaiming the undiluted Word of God and building a strong community anchored in faith, prayer, and stewardship.</p>
+									<ul class="actions">
+										<li><a href="#two" class="button">Discover Our Focus</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="https://fingersfromtheheart.com/" target="_blank" class="image"><img src="images/pic02.jpg" alt="Global Connection" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Global Connection</h2>
+									<p>Connected with Fingers From The Heart Ministries HQ, Bible College, and pastoral leadership. Built on the transformative testimony of grace and calling.</p>
+									<ul class="actions">
+										<li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener" class="button">Read Bishop's Testimony & Book</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
 
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s ease;
-    }
+				<!-- Two Section (Features Grid / Core Values & Ministries) -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Local Ministries & Core Focus</h2>
+							<p>At New Birth Ministries, we empower individuals and families through structured ministry programs and deep spiritual foundation.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-bible"></span>
+									<h3>The Word & Prayer</h3>
+									<p>Dedicated to preaching and teaching the Word of God without fear or favor, saturating every service with earnest prayer.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-users"></span>
+									<h3>Family & Fellowship</h3>
+									<p>Fostering healthy families and intentional small group ministry services to build lifelong community bonds.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-hands-helping"></span>
+									<h3>Evangelism & Witness</h3>
+									<p>Living out a personal witness of Jesus Christ and actively serving our local communities in Jamaica.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-heart"></span>
+									<h3>Stewardship</h3>
+									<p>Using our time, resources, and gifts effectively for the glory of God and the uplifting of our community.</p>
+								</section>
+							</div>
+							<ul class="actions" style="margin-top: 2rem;">
+								<li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener" class="button">Explore All HQ Ministries</a></li>
+							</ul>
+						</div>
+					</section>
 
-    .btn-primary {
-      background-color: var(--brand-accent);
-      color: #ffffff;
-    }
+				<!-- Three Section (Worship Times, Location & Contact) -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Worship With Us & Get In Touch</h2>
+							<p>We welcome you to join us for worship, prayer, and fellowship. Reach out or visit us during our weekly services.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Worship Service Times</h3>
+											<span><strong>Sundays:</strong> 9:00 AM - 11:30 AM<br />
+											<strong>Mid-Week Service:</strong> Wednesday 7:00 PM</span>
+										</li>
+										<li>
+											<h3>Branch Location</h3>
+											<span>New Birth Ministries - Jamaica<br />
+											[Insert Local Branch Address]<br />
+											Jamaica</span>
+										</li>
+										<li>
+											<h3>Email & Phone</h3>
+											<a href="mailto:info@branch.fingersfromtheheart.com">info@branch.fingersfromtheheart.com</a><br />
+											<span>[Insert Contact Phone]</span>
+										</li>
+										<li>
+											<h3>Global HQ Connection</h3>
+											<p><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Fingers From The Heart HQ</a> | <a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Bible College</a></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
 
-    .btn-primary:hover {
-      background-color: var(--brand-accent-hover);
-    }
+			</div>
 
-    .btn-outline {
-      border: 2px solid var(--brand-primary);
-      color: var(--brand-primary);
-      background: transparent;
-    }
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; New Birth Ministries - Jamaica (FFTHM Branch). All rights reserved.</li>
+						<li>Powered by Cloudflare Pages</li>
+					</ul>
+				</div>
+			</footer>
 
-    .btn-outline:hover {
-      background-color: var(--brand-primary);
-      color: #ffffff;
-    }
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-    /* Mobile Menu Toggle (Simplified) */
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--brand-primary);
-      cursor: pointer;
-    }
-
-    /* ==========================================================================
-       MAIN CONTENT SHELL
-       ========================================================================== */
-    main {
-      flex: 1;
-    }
-
-    .hero-placeholder {
-      background: linear-gradient(135deg, var(--brand-primary) 0%, #0F172A 100%);
-      color: #ffffff;
-      padding: 5rem 1.5rem;
-      text-align: center;
-    }
-
-    .hero-placeholder h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-placeholder p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-      opacity: 0.9;
-    }
-
-    .content-container {
-      max-width: var(--max-width);
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-
-    /* ==========================================================================
-       FOOTER SHELL
-       ========================================================================== */
-    .site-footer {
-      background-color: var(--footer-bg);
-      color: #E2E8F0;
-      padding-top: 4rem;
-      padding-bottom: 2rem;
-    }
-
-    .footer-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .footer-col h3 {
-      color: #ffffff;
-      font-size: 1.1rem;
-      margin-bottom: 1.25rem;
-      position: relative;
-    }
-
-    .footer-col h3::after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 2px;
-      background-color: var(--brand-accent);
-      margin-top: 0.4rem;
-    }
-
-    .footer-col p {
-      font-size: 0.9rem;
-      color: #94A3B8;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.6rem;
-    }
-
-    .footer-links a {
-      color: #94A3B8;
-      font-size: 0.9rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--brand-accent);
-    }
-
-    .footer-bottom {
-      max-width: var(--max-width);
-      margin: 3rem auto 0 auto;
-      padding: 1.5rem 1.5rem 0 1.5rem;
-      border-top: 1px solid #1E293B;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: #64748B;
-    }
-
-    /* ==========================================================================
-       RESPONSIVE BREAKPOINTS
-       ========================================================================== */
-    @media (max-width: 900px) {
-      .nav-menu, .header-actions {
-        display: none; /* Hide for mobile layout hook */
-      }
-      .mobile-toggle {
-        display: block;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HEADER SHELL -->
-  <header class="site-header">
-    <div class="header-container">
-      <a href="/" class="brand-logo">
-        FFTHM <span class="branch-tag">Branch</span>
-      </a>
-
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#about" class="nav-link">About Us</a></li>
-          <li><a href="#ministries" class="nav-link">Ministries</a></li>
-          <li><a href="#events" class="nav-link">Events</a></li>
-          <li><a href="#live" class="nav-link">Watch Live</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a href="#give" class="btn btn-outline">Give</a>
-        <a href="#visit" class="btn btn-primary">Plan A Visit</a>
-      </div>
-
-      <button class="mobile-toggle" aria-label="Toggle Navigation">
-        &#9776;
-      </button>
-    </div>
-  </header>
-
-  <!-- MAIN CONTENT AREA -->
-  <main>
-    <!-- Hero Banner Placeholder -->
-    <section class="hero-placeholder">
-      <h1>Welcome to FFTHM [Branch Name]</h1>
-      <p>A place of faith, fellowship, and transformation. Join us in worship as we walk in purpose together.</p>
-      <div style="display: flex; gap: 1rem; justify-content: center;">
-        <a href="#visit" class="btn btn-primary">Join Us This Sunday</a>
-        <a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #fff; color: #fff;">Visit Parent Church</a>
-      </div>
-    </section>
-
-    <!-- Content Hook for Future Uniqueness -->
-    <section class="content-container">
-      <h2>Branch Overview & Unique Focus</h2>
-      <p style="margin-top: 1rem; color: var(--text-muted);">
-        This section will house your unique branch content, worship schedules, local pastoral greeting, and specific ministry highlights while retaining the core visual structure of the global church identity.
-      </p>
-    </section>
-  </main>
-
-  <!-- FOOTER SHELL -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <!-- Col 1: About Branch -->
-      <div class="footer-col">
-        <h3>FFTHM Branch</h3>
-        <p>A local expression of Fingers From The Heart Ministries, dedicated to proclaiming the undiluted Word of God.</p>
-      </div>
-
-      <!-- Col 2: Quick Links -->
-      <div class="footer-col">
-        <h3>Navigation</h3>
-        <ul class="footer-links">
-          <li><a href="#about">Our Story</a></li>
-          <li><a href="#beliefs">Our Beliefs</a></li>
-          <li><a href="#ministries">Local Ministries</a></li>
-          <li><a href="#events">Upcoming Events</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Affiliation & HQ Links -->
-      <div class="footer-col">
-        <h3>Global Connection</h3>
-        <ul class="footer-links">
-          <li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Main Ministry HQ</a></li>
-          <li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Bible College</a></li>
-          <li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Bishop's Testimony & Book</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Contact & Service Times -->
-      <div class="footer-col">
-        <h3>Worship With Us</h3>
-        <p><strong>Sundays:</strong> 9:00 AM - 11:30 AM</p>
-        <p><strong>Address:</strong> [Insert Local Branch Address]</p>
-        <p><strong>Phone:</strong> [Insert Contact Phone]</p>
-        <p><strong>Email:</strong> info@branch.fingersfromtheheart.com</p>
-      </div>
-    </div>
-
-    <!-- Footer Bottom Legal / Attribution -->
-    <div class="footer-bottom">
-      <p>&copy; <script>document.write(new Date().getFullYear())</script> Fingers From The Heart Ministries - Branch Location. All rights reserved.</p>
-      <p>Powered by Cloudflare Pages</p>
-    </div>
-  </footer>
-
-</body>
+	</body>
 </html>

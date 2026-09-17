@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fingers From The Heart Ministries - Trinityville</title>
+  <meta name="description" content="Welcome to Fingers From The Heart Ministries Branch. Join us for worship and fellowship.">
+  
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & BRAND COLORS
+       ========================================================================== */
+    :root {
+      /* Primary Brand Palette (Aligned with FFTHM) */
+      --brand-primary: #1A2B4C;      /* Deep Navy */
+      --brand-accent: #C59B27;       /* Royal Gold Accent */
+      --brand-accent-hover: #A37F1E;
+      --text-dark: #222222;
+      --text-muted: #555555;
+      --bg-light: #F8F9FA;
+      --bg-white: #FFFFFF;
+      --footer-bg: #0F172A;
+      
+      /* Layout & Spacing */
+      --max-width: 1200px;
+      --header-height: 80px;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION SHELL
+       ========================================================================== */
+    .site-header {
+      background-color: var(--bg-white);
+      height: var(--header-height);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .header-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+    }
+
+    /* Brand / Logo Area */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--brand-primary);
+    }
+
+    .brand-logo span.branch-tag {
+      font-size: 0.8rem;
+      background-color: var(--brand-accent);
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Navigation Links */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--brand-primary);
+      font-size: 0.95rem;
+    }
+
+    .nav-link:hover {
+      color: var(--brand-accent);
+    }
+
+    /* Action Buttons */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-accent-hover);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--brand-primary);
+      color: var(--brand-primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--brand-primary);
+      color: #ffffff;
+    }
+
+    /* Mobile Menu Toggle (Simplified) */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--brand-primary);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       MAIN CONTENT SHELL
+       ========================================================================== */
+    main {
+      flex: 1;
+    }
+
+    .hero-placeholder {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #0F172A 100%);
+      color: #ffffff;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-placeholder h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-placeholder p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      opacity: 0.9;
+    }
+
+    .content-container {
+      max-width: var(--max-width);
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       FOOTER SHELL
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--footer-bg);
+      color: #E2E8F0;
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+
+    .footer-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .footer-col h3 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: var(--brand-accent);
+      margin-top: 0.4rem;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      color: #94A3B8;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #94A3B8;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--brand-accent);
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 3rem auto 0 auto;
+      padding: 1.5rem 1.5rem 0 1.5rem;
+      border-top: 1px solid #1E293B;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #64748B;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .nav-menu, .header-actions {
+        display: none; /* Hide for mobile layout hook */
+      }
+      .mobile-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER SHELL -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        FFTHM <span class="branch-tag">Branch</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#ministries" class="nav-link">Ministries</a></li>
+          <li><a href="#events" class="nav-link">Events</a></li>
+          <li><a href="#live" class="nav-link">Watch Live</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#give" class="btn btn-outline">Give</a>
+        <a href="#visit" class="btn btn-primary">Plan A Visit</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Toggle Navigation">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main>
+    <!-- Hero Banner Placeholder -->
+    <section class="hero-placeholder">
+      <h1>Welcome to FFTHM [Branch Name]</h1>
+      <p>A place of faith, fellowship, and transformation. Join us in worship as we walk in purpose together.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="#visit" class="btn btn-primary">Join Us This Sunday</a>
+        <a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #fff; color: #fff;">Visit Parent Church</a>
+      </div>
+    </section>
+
+    <!-- Content Hook for Future Uniqueness -->
+    <section class="content-container">
+      <h2>Branch Overview & Unique Focus</h2>
+      <p style="margin-top: 1rem; color: var(--text-muted);">
+        This section will house your unique branch content, worship schedules, local pastoral greeting, and specific ministry highlights while retaining the core visual structure of the global church identity.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER SHELL -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Col 1: About Branch -->
+      <div class="footer-col">
+        <h3>FFTHM Branch</h3>
+        <p>A local expression of Fingers From The Heart Ministries, dedicated to proclaiming the undiluted Word of God.</p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#beliefs">Our Beliefs</a></li>
+          <li><a href="#ministries">Local Ministries</a></li>
+          <li><a href="#events">Upcoming Events</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Affiliation & HQ Links -->
+      <div class="footer-col">
+        <h3>Global Connection</h3>
+        <ul class="footer-links">
+          <li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Main Ministry HQ</a></li>
+          <li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Bible College</a></li>
+          <li><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Bishop's Testimony & Book</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Service Times -->
+      <div class="footer-col">
+        <h3>Worship With Us</h3>
+        <p><strong>Sundays:</strong> 9:00 AM - 11:30 AM</p>
+        <p><strong>Address:</strong> [Insert Local Branch Address]</p>
+        <p><strong>Phone:</strong> [Insert Contact Phone]</p>
+        <p><strong>Email:</strong> info@branch.fingersfromtheheart.com</p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Legal / Attribution -->
+    <div class="footer-bottom">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Fingers From The Heart Ministries - Branch Location. All rights reserved.</p>
+      <p>Powered by Cloudflare Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
