@@ -20,65 +20,150 @@
 			   THEME OVERRIDES: Light Color Palette & Logo Palette Integration
 			   ========================================================================== */
 			:root {
-				--brand-deep-purple: #2E1A47;
-				--brand-royal-purple: #4A2069;
+				/* Brand Blues */
+				--brand-navy-blue: #0A192F;      /* Deep navy */
+				--brand-royal-blue: #1E3A8A;     /* Rich royal blue */
+				--brand-powder-blue: #B0C4DE;    /* Light powder blue accent */
+    
+				/* Brand Accents & Highlights */
 				--brand-gold: #C59B27;
 				--brand-gold-light: #E0BA51;
 				--brand-sky-blue: #00A2E8;
-				--text-dark: #2D2B32;
-				--text-muted: #5E5B66;
-				--bg-light: #FAF9FC;
-				--bg-white: #FFFFFF;
-				--bg-accent-soft: #F3EDFA;
+				
+				/* Text & Surfaces (Light Theme) */
+				--text-primary: #1E293B;
+				--text-muted: #64748B;
+				--bg-main: #F8FAFC;             /* Clean blue-tinted off-white */
+				--bg-card: #FFFFFF;
+				--bg-accent: #E0F2FE;        /* Soft powder-blue tint */
+				--border-color: rgba(10, 25, 47, 0.15);
+
+				/* Sidebar Colors (Light Mode) */
+				--sidebar-bg: var(--brand-royal-blue);
+				--sidebar-text: #E2D9EE;
+				--sidebar-text-hover: var(--brand-gold-light);
+
+				/* Typography */
 				--font-heading: 'Cinzel', Georgia, serif;
 				--font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
 			}
 
+			/* ==========================================================================
+			   THEME PALETTE (DARK MODE)
+			   ========================================================================== */
+			[data-theme="dark"] {
+				/* Blue Shades for Dark Background Contrast */
+				--brand-navy-blue: #E2E8F0;     /* Crisp light navy/slate for dark mode headings */
+				--brand-royal-blue: #93C5FD;    /* Soft powder blue highlight */
+				--brand-powder-blue: #3B82F6;
+				
+				/* Accents & Text */
+				--brand-gold: #E0BA51;
+				--brand-gold-light: #F3D270;
+				--text-primary: #F1F5F9;
+				--text-muted: #94A3B8;
+				
+				/* Dark Mode Surfaces (Deep Navy / Midnight Blues) */
+				--bg-main: #0B132B;             /* Deepest midnight blue background */
+				--bg-card: #1C2541;             /* Navy card background */
+				--bg-accent: #1E293B;           /* Dark slate blue accent container */
+				--border-color: rgba(224, 186, 81, 0.2);
+
+				/* Sidebar Colors (Dark Mode) */
+				--sidebar-bg: var(--bg-card);
+				--sidebar-text: var(--text-muted);
+				--sidebar-text-hover: var(--brand-gold);
+			}
+
+			/* ==========================================================================
+			   DYNAMIC DUAL-THEME STYLING
+			   ========================================================================== */
 			body, input, select, textarea {
-				font-family: var(--font-body);
-				color: var(--text-dark);
-				background-color: var(--bg-light) !important;
+  				font-family: var(--font-body) !important;
+  				color: var(--text-primary) !important;
+  				background-color: var(--bg-main) !important;
+  				transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 			}
 
 			h1, h2, h3, h4, h5, h6 {
-				font-family: var(--font-heading);
-				color: var(--brand-deep-purple);
+				font-family: var(--font-heading) !important;
+				color: var(--brand-navy-blue) !important;
 				letter-spacing: 0.5px;
 			}
 
-			/* Sidebar / Navigation Styling Override */
+			/* Sidebar / Navigation */
 			#sidebar {
-				background: var(--brand-deep-purple) !important;
+				background: var(--sidebar-bg) !important;
+				border-right: 1px solid var(--border-color);
+				transition: background-color 0.3s ease;
 			}
 			#sidebar nav ul li a {
-				color: #E2D9EE !important;
+				color: var(--sidebar-text) !important;
 				font-family: var(--font-body);
 				font-weight: 500;
+				transition: color 0.25s ease;
 			}
+
 			#sidebar nav ul li a.active, 
 			#sidebar nav ul li a:hover {
-				color: var(--brand-gold-light) !important;
+				color: var(--sidebar-text-hover) !important;
 			}
 
-			/* Section Styles Override for Light Theme */
+			/* High-Contrast Toggle Button Inside Sidebar */
+			#sidebar .button.outline {
+				border-color: var(--sidebar-text) !important;
+				color: var(--sidebar-text) !important;
+			}
+
+			#sidebar .button.outline:hover {
+				background-color: var(--sidebar-text) !important;
+				color: var(--brand-royal-blue) !important;
+			}
+
+			/* Section Wrappers */
 			.wrapper.style1 {
-				background-color: var(--bg-white) !important;
-				color: var(--text-dark) !important;
+				background-color: var(--bg-card) !important;
+				color: var(--text-primary) !important;
 			}
 			.wrapper.style2 {
-				background-color: var(--bg-accent-soft) !important;
-				color: var(--text-dark) !important;
+				background-color: var(--bg-accent) !important;
+				color: var(--text-primary) !important;
 			}
 			.wrapper.style3 {
-				background-color: var(--bg-light) !important;
-				color: var(--text-dark) !important;
+				background-color: var(--bg-main) !important;
+				color: var(--text-primary) !important;
 			}
 			.wrapper.style1-alt {
-				background-color: var(--brand-deep-purple) !important;
-				color: #E2D9EE !important;
+				background-color: var(--bg-card) !important;
+				border-top: 1px solid var(--border-color);
 			}
 
-			/* Buttons Styling */
+			/* Contact & Schedule Styling */
+			.service-schedule p strong {
+				color: var(--brand-navy-blue) !important;
+				font-weight: 700 !important;
+			}
+			.service-schedule p {
+				color: var(--text-primary) !important;
+				text-align: left !important;
+				margin: 0 0 0.5rem 0 !important;
+				display: block !important;
+			}
+
+			/* Form Inputs */
+			form label {
+				color: var(--brand-navy-blue) !important;
+				font-weight: 600 !important;
+			}
+			form input[type="text"],
+			form input[type="email"],
+			form textarea {
+				background-color: var(--bg-card) !important;
+				color: var(--text-primary) !important;
+				border: 1px solid var(--border-color) !important;
+			}
+
+			/* Buttons */
 			.button, button, input[type="submit"] {
 				background-color: var(--brand-gold) !important;
 				color: #FFFFFF !important;
@@ -86,29 +171,28 @@
 				font-family: var(--font-body) !important;
 				font-weight: 600 !important;
 				box-shadow: none !important;
-				transition: all 0.25s ease !important;
+				transition: background-color 0.25s ease, color 0.25s ease !important;
 			}
 			.button:hover, button:hover, input[type="submit"]:hover {
-				background-color: #A8811A !important;
-				color: #FFFFFF !important;
+				background-color: var(--brand-gold-light) !important;
+				color: #1E293B !important;
 			}
 			.button.outline {
 				background-color: transparent !important;
-				border: 2px solid var(--brand-deep-purple) !important;
-				color: var(--brand-deep-purple) !important;
+				border: 2px solid var(--brand-navy-blue) !important;
+				color: var(--brand-navy-blue) !important;
 			}
 			.button.outline:hover {
-				background-color: var(--brand-deep-purple) !important;
+				background-color: var(--brand-navy-blue) !important;
 				color: #FFFFFF !important;
 			}
 
-			/* Feature Box Styling */
+			/* Features Grid */
 			.features section {
-				border-color: rgba(74, 32, 105, 0.15) !important;
-				background: var(--bg-white);
+				border: 1px solid var(--border-color) !important;
+				background: var(--bg-card) !important;
 				padding: 2rem;
 				border-radius: 8px;
-				box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 			}
 			.features .icon {
 				color: var(--brand-gold) !important;
@@ -143,7 +227,13 @@
 							<li><a href="#three">Worship & Contact</a></li>
 						</ul>
 					</nav>
-				</div>
+					<!-- Dark Mode Toggle Button -->
+    				<div style="padding: 1rem 0; text-align: center;">
+      					<button id="theme-toggle" class="button outline" style="padding: 0 1rem; font-size: 0.8rem;">
+        				🌙 Dark Mode
+      					</button>
+    				</div>
+  				</div>
 			</section>
 
 		<!-- Wrapper -->
@@ -152,9 +242,9 @@
 				<!-- Intro Section -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<span class="logo-badge">FFTHM Branch</span>
-							<h1>New Birth Ministries</h1>
-							<p style="font-size: 1.25rem; color: var(--brand-royal-purple); font-weight: 500;">Jamaica</p>
+							<span class="logo-badge">Trinityville</span>
+							<h1>Fingers From The Heart</h1>
+							<p style="font-size: 1.25rem; color: var(--brand-royal-blue); font-weight: 500;">Jamaica</p>
 							<p>A place of faith, fellowship, and transformation. Join us in worship as we walk in purpose together, proclaiming the undiluted Word of God.</p>
 							<ul class="actions">
 								<li><a href="#three" class="button scrolly">Plan A Visit</a></li>
@@ -169,7 +259,7 @@
 							<a href="https://fingersfromtheheart.com/" target="_blank" class="image"><img src="images/pic01.jpg" alt="FFTHM Ministries" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Our Branch Vision</h2>
+									<h2>Our Vision</h2>
 									<p>A local expression of Fingers From The Heart Ministries, dedicated to proclaiming the undiluted Word of God and building a strong community anchored in faith, prayer, and stewardship.</p>
 									<ul class="actions">
 										<li><a href="#two" class="button">Discover Our Focus</a></li>
@@ -255,14 +345,16 @@
 									<ul class="contact">
 										<li>
 											<h3>Worship Service Times</h3>
-											<span><strong>Sundays:</strong> 8:30 AM - 11:30 AM<br />
-											<strong>Prayer and Fasting:</strong> Wednesday 7:00 PM</span>
-											<strong>End-of-Week Service:</strong> Friday 7:00 PM</span>
+											<div class="service-schedule">
+												<p><strong>Worship:</strong> Sundays 8:30 AM – 11:30 AM</p>
+												<p><strong>Prayer and Fasting:</strong> Wednesdays 7:00 PM</p>
+												<p><strong>End-of-Week Service:</strong> Fridays 7:00 PM</p>
+											</div>
 										</li>
 										<li>
 											<h3>Branch Location</h3>
 											<span>Fingers From The Heart Ministries<br />
-											Trinityville, St. Thomas, Jamaica<br />
+											Trinityville, St. Thomas<br />
 											Jamaica</span>
 										</li>
 										<li>
@@ -271,7 +363,7 @@
 											<span>[Insert Contact Phone]</span>
 										</li>
 										<li>
-											<h3>Global HQ Connection</h3>
+											<h3>Headquarters Connection</h3>
 											<p><a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Fingers From The Heart HQ</a> | <a href="https://fingersfromtheheart.com/" target="_blank" rel="noopener">Bible College</a></p>
 										</li>
 									</ul>
@@ -300,6 +392,35 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+ 				const toggleBtn = document.getElementById('theme-toggle');
+				const currentTheme = localStorage.getItem('theme');
 
+				// Initial Theme Load
+				if (currentTheme) {
+					document.documentElement.setAttribute('data-theme', currentTheme);
+					if (currentTheme === 'dark' && toggleBtn) toggleBtn.textContent = '☀️ Light Mode';
+				} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					document.documentElement.setAttribute('data-theme', 'dark');
+					if (toggleBtn) toggleBtn.textContent = '☀️ Light Mode';
+				}
+
+				// Toggle Click Logic
+				if (toggleBtn) {
+					toggleBtn.addEventListener('click', () => {
+						let theme = document.documentElement.getAttribute('data-theme');
+						if (theme === 'dark') {
+							document.documentElement.setAttribute('data-theme', 'light');
+							localStorage.setItem('theme', 'light');
+							toggleBtn.textContent = '🌙 Dark Mode';
+						} else {
+							document.documentElement.setAttribute('data-theme', 'dark');
+							localStorage.setItem('theme', 'dark');
+							toggleBtn.textContent = '☀️ Light Mode';
+						}
+					});
+				}
+		</script>
 	</body>
 </html>
